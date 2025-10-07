@@ -1,0 +1,3 @@
+[submodule "ros_edu_super_secret_package"]
+	path = ros_edu_super_secret_package
+	url = https://github.com/AleksDevEdu/ros_edu_super_secret_package.git
