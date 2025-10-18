@@ -1,0 +1,8 @@
+prefix=/home/dilnoza/catkin_ws/install
+
+Name: just_dd
+Description: Description of just_dd
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

@@ -1,0 +1,2 @@
+just_dd:my_ros_lab:ros_edu_super_secret_package
+-DCATKIN_DEVEL_PREFIX=/home/dilnoza/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/dilnoza/catkin_ws/install -G Unix Makefiles

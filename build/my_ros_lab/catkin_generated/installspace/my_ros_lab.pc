@@ -1,0 +1,8 @@
+prefix=/home/dilnoza/catkin_ws/install
+
+Name: my_ros_lab
+Description: Description of my_ros_lab
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
