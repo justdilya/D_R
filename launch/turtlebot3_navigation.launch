@@ -1,0 +1,27 @@
+<launch>
+    <!-- Устанавливаем модель по умолчанию -->
+    <arg name="model" default="waffle" doc="model type [burger, waffle, waffle_pi]"/>
+    <arg name="x_pos" default="-2.0" doc="Initial X position"/>
+    <arg name="y_pos" default="-0.5" doc="Initial Y position"/>
+    <arg name="z_pos" default="0.0" doc="Initial Z position"/>
+    <arg name="gui" default="true" doc="Gazebo GUI enabled"/>
+
+    <!-- Запускаем симулятор Gazebo -->
+    <include file="$(find turtlebot3_gazebo)/launch/turtlebot3_world.launch">
+        <arg name="model" value="$(arg model)"/>
+        <arg name="x_pos" value="$(arg x_pos)"/>
+        <arg name="y_pos" value="$(arg y_pos)"/>
+        <arg name="z_pos" value="$(arg z_pos)"/>
+        <arg name="gui" value="$(arg gui)"/>
+    </include>
+    
+    <!-- Запускаем SLAM для построения карты -->
+    <include file="$(find turtlebot3_slam)/launch/turtlebot3_slam.launch">
+        <arg name="model" value="$(arg model)"/>
+    </include>
+
+    <!-- Запускаем навигацию (move_base) для движения к целям -->
+    <include file="$(find turtlebot3_navigation)/launch/move_base.launch">
+        <arg name="model" value="$(arg model)"/>
+    </include>
+</launch>

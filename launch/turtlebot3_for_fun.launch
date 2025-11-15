@@ -1,0 +1,4 @@
+<launch>
+    <!-- Используем нашу улучшенную версию SLAM -->
+    <include file="$(find my_ros_practice)/launch/my_turtlebot3_slam.launch" />
+</launch>

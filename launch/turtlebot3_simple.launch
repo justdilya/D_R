@@ -1,0 +1,15 @@
+<launch>
+    <!-- Простая версия - только Gazebo -->
+    <arg name="model" default="waffle" doc="model type [burger, waffle, waffle_pi]"/>
+    <arg name="x_pos" default="-2.0" doc="Initial X position"/>
+    <arg name="y_pos" default="-0.5" doc="Initial Y position"/>
+    <arg name="z_pos" default="0.0" doc="Initial Z position"/>
+
+    <!-- Только Gazebo для начала -->
+    <include file="$(find my_ros_practice)/launch/my_turtlebot3_world.launch">
+        <arg name="model" value="$(arg model)"/>
+        <arg name="x_pos" value="$(arg x_pos)"/>
+        <arg name="y_pos" value="$(arg y_pos)"/>
+        <arg name="z_pos" value="$(arg z_pos)"/>
+    </include>
+</launch>

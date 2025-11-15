@@ -1,0 +1,14 @@
+<launch>
+    <!-- Запуск симулятора -->
+    <include file="$(find my_ros_practice)/launch/my_turtlebot3_world.launch" />
+    
+    <!-- Публикация TF робота -->
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+        <param name="publish_frequency" type="double" value="50.0" />
+    </node>
+
+    <!-- Запуск Rviz -->
+       <!-- Запуск Rviz с задержкой -->
+        <!-- Запуск Rviz с задержкой 8 секунд -->
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find my_ros_practice)/rviz/sim_initial.rviz" launch-prefix="bash -c 'sleep 8.0; $0 $@' " />
+</launch>
