@@ -1,0 +1,16 @@
+<launch>
+    <!-- Turtlesim Node-->
+    <node pkg="turtlesim" type="turtlesim_node" name="sim"/>
+    <node pkg="turtlesim" type="turtle_teleop_key" name="teleop" output="screen"/>
+    
+    <!-- Our TF Broadcasters -->
+    <node name="turtle1_tf_broadcaster" pkg="study_pkg" type="turtle_tf_broadcaster_carrot.py" respawn="false" output="screen">
+        <param name="turtle" type="string" value="turtle1"/>
+    </node>
+    <node name="turtle2_tf_broadcaster" pkg="study_pkg" type="turtle_tf_broadcaster.py" respawn="false" output="screen">
+        <param name="turtle" type="string" value="turtle2"/>
+    </node>
+    
+    <!-- TF Listener -->
+    <node name="turtle_tf_listener" pkg="study_pkg" type="turtle_tf_listener.py" respawn="false" output="screen"/>
+</launch>
